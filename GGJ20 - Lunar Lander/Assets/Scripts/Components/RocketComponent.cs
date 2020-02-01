@@ -12,9 +12,10 @@ namespace Mikabrytu.GGJ20.Components
         [SerializeField] private LayerMask _groundMask;
 
         private IFly flySystem;
+        private IGroundCheck groundCheckSystem;
 
         private Rigidbody2D body;
-        private BoxCollider2D collider;
+        private new BoxCollider2D collider;
         private bool isGrounded = false;
 
         private void Start()
@@ -23,6 +24,8 @@ namespace Mikabrytu.GGJ20.Components
             collider = GetComponent<BoxCollider2D>();
 
             flySystem = new FlySystem();
+            groundCheckSystem = new GroundCheckSystem();
+
             flySystem.Setup(_initialImpulse, _thrusterForce);
         }
 
@@ -43,10 +46,7 @@ namespace Mikabrytu.GGJ20.Components
 
         private bool isLanded()
         {
-            float distance = collider.bounds.extents.y + .05f;
-            RaycastHit2D hit = Physics2D.Raycast(
-                collider.bounds.center, Vector2.down, distance, _groundMask);
-            return hit.collider != null;
+            return groundCheckSystem.IsGrounded(collider, Vector2.down, _groundMask, .05f);
         }
     }
 }
