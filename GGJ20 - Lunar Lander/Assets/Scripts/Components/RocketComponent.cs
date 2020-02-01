@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Mikabrytu.GGJ20.Systems;
+using Mikabrytu.GGJ20.Events;
 
 namespace Mikabrytu.GGJ20.Components
 {
@@ -9,7 +8,8 @@ namespace Mikabrytu.GGJ20.Components
     {
         [SerializeField] private Vector2 _initialImpulse;
         [SerializeField] private Vector2 _thrusterForce;
-        [SerializeField] private LayerMask _groundMask;
+        [SerializeField] private LayerMask _stationMask;
+        [SerializeField] private int _groundLayer;
 
         private IFly flySystem;
         private IGroundCheck groundCheckSystem;
@@ -34,6 +34,12 @@ namespace Mikabrytu.GGJ20.Components
             
         }
 
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.layer == _groundLayer)
+                EventsManager.Raise(new OnRocketCrashEvent());
+        }
+
         public void OnLeftClick()
         {
             flySystem.Impulse(body, Vector2.left, isLanded());
@@ -46,7 +52,7 @@ namespace Mikabrytu.GGJ20.Components
 
         private bool isLanded()
         {
-            return groundCheckSystem.IsGrounded(collider, Vector2.down, _groundMask, .05f);
+            return groundCheckSystem.IsGrounded(collider, Vector2.down, _stationMask, .05f);
         }
     }
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6250449979056578231}
   - component: {fileID: 3789175056485791109}
   - component: {fileID: 6219213457473609867}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rocket
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,11 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e78ef60809a64b8692eb44804a49350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initialImpulse: {x: 2, y: 5}
-  _thrusterForce: 0
-  _groundMask:
+  _initialImpulse: {x: 1.5, y: 10}
+  _thrusterForce: {x: 25, y: 200}
+  _stationMask:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 512
+  _groundLayer: 8
 --- !u!212 &6250449979056578231
 SpriteRenderer:
   m_ObjectHideFlags: 0
