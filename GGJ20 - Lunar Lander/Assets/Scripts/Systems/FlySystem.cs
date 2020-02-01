@@ -19,6 +19,7 @@ namespace Mikabrytu.GGJ20.Systems
         {
             if (isLanded)
             {
+                body.velocity = Vector2.zero;
                 body.AddForce(initialImpulse, ForceMode2D.Impulse);
                 return;
             }
