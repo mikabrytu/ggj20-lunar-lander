@@ -24,7 +24,6 @@ namespace Mikabrytu.GGJ20.Systems
             }
 
             body.AddRelativeForce(thrusterForce * direction, ForceMode2D.Force);
-            //Debug.Log($"Adding Relative {thrusterForce} Force");
         }
     }
 }
