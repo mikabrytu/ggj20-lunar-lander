@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Mikabrytu.GGJ20.Systems;
 
-public class RocketComponent : MonoBehaviour
+namespace Mikabrytu.GGJ20.Components
 {
-    // Start is called before the first frame update
-    void Start()
+    public class RocketComponent : MonoBehaviour
     {
-        
-    }
+        private IFly flySystem;
+        private IInput inputSystem;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private void Start()
+        {
+            flySystem = new FlySystem();
+            inputSystem = new InputSystem();
+        }
     }
 }
