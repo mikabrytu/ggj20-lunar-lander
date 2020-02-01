@@ -6,7 +6,10 @@ namespace Mikabrytu.GGJ20
 {
     public interface IFly
     {
-        void Setup(Vector2 initialImpulse, Vector2 thrusterForce);
-        void Impulse(Rigidbody2D body, Vector2 direction, bool isLanded);
+        void SetupForces(Vector2 initialImpulse, Vector2 thrusterForce);
+        void SetupFuel(float maxFuel, float impulseCost);
+        void Impulse(Rigidbody2D body, Vector2 direction, ParticleSystem thrusterParticle, bool isLanded);
+        void ResetFuel();
+        float GetFuel();
     }
 }
