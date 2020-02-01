@@ -18,6 +18,11 @@ namespace Mikabrytu.GGJ20
                 _onLongClick.Invoke();
         }
 
+        private void OnDisable()
+        {
+            isPressing = false;
+        }
+
         public void OnPointerDown(PointerEventData eventData)
         {
             isPressing = true;
