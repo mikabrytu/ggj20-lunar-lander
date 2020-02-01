@@ -51,7 +51,7 @@ namespace Mikabrytu.GGJ20
             _gameUI.SetActive(false);
             _gameOverUI.SetActive(false);
 
-            _highScoreText.text = $"High Score: {scoreManager.GetScore()}";
+            _highScoreText.text = $"High Score: {scoreManager.GetHighScore()}";
         }
 
         public void SetupGameUI()

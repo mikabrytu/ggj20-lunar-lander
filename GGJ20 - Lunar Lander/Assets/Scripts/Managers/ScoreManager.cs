@@ -1,17 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Mikabrytu.GGJ20
 {
     public class ScoreManager : Singleton<ScoreManager>
     {
         private const string KEY = "GGJ20-LL-score";
-        private int score;
+        private int score, highScore;
 
-        private void Start()
+        protected override void Awake()
         {
-            score = PlayerPrefs.GetInt(KEY, 0);
+            base.Awake();
+            highScore = PlayerPrefs.GetInt(KEY, 0);
+            score = 0;
         }
 
         public void IncreaseScore()
@@ -22,6 +22,11 @@ namespace Mikabrytu.GGJ20
         public int GetScore()
         {
             return score;
+        }
+
+        public int GetHighScore()
+        {
+            return highScore;
         }
 
         public void SaveScore()
