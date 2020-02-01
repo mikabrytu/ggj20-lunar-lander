@@ -93,6 +93,7 @@ namespace Mikabrytu.GGJ20
         public void RestartGame()
         {
             InitRocket();
+            SetupGameUI();
         }
 
 #endregion
