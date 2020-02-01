@@ -9,10 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 232840235179720590}
+  - component: {fileID: 7076243285635162394}
   - component: {fileID: 3362694272390276812}
   - component: {fileID: 55784706567225916}
-  m_Layer: 8
-  m_Name: Base
+  m_Layer: 9
+  m_Name: Station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,6 +33,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7076243285635162394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2952862121863419339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93d065892ad154bc194fb98c0695ce29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _model:
+    id: 0
+    isObjective: 0
+  _layerCheck: 10
 --- !u!212 &3362694272390276812
 SpriteRenderer:
   m_ObjectHideFlags: 0
