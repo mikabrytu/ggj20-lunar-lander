@@ -17,14 +17,16 @@ namespace Mikabrytu.GGJ20.Components
         private IFly flySystem;
         private IGroundCheck groundCheckSystem;
 
-        private Rigidbody2D body;
         private new BoxCollider2D collider;
+        private Rigidbody2D body;
+        private Vector2 landPosition;
         private bool isGrounded = false;
 
         private void Start()
         {
             body = GetComponent<Rigidbody2D>();
             collider = GetComponent<BoxCollider2D>();
+            landPosition = transform.position;
 
             flySystem = new FlySystem();
             groundCheckSystem = new GroundCheckSystem();
@@ -38,10 +40,15 @@ namespace Mikabrytu.GGJ20.Components
             if (collision.gameObject.layer == _groundLayer)
                 EventsManager.Raise(new OnRocketCrashEvent());
         }
+        
+        public void SetStationPosition(Vector2 position)
+        {
+            landPosition = new Vector2(position.x, position.y + collider.bounds.extents.y);
+        }
 
         public void ResetPosition()
         {
-            
+            transform.position = landPosition;
         }
 
         public void ResetFuel()
@@ -68,5 +75,6 @@ namespace Mikabrytu.GGJ20.Components
         {
             return groundCheckSystem.IsGrounded(collider, Vector2.down, _stationMask, .05f);
         }
+
     }
 }

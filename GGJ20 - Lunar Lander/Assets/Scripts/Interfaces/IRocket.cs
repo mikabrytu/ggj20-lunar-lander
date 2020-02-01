@@ -6,6 +6,7 @@ namespace Mikabrytu.GGJ20.Components
 {
     public interface IRocket
     {
+        void SetStationPosition(Vector2 position);
         void ResetPosition();
         void ResetFuel();
         string GetFuel();

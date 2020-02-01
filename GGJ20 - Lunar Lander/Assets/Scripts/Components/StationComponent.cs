@@ -14,7 +14,7 @@ namespace Mikabrytu.GGJ20.Components
                 return;
                 
             if (collision.gameObject.layer == _layerCheck)
-                EventsManager.Raise(new OnLandOnStationEvent(_model));
+                EventsManager.Raise(new OnLandOnStationEvent(_model, transform.position));
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Mikabrytu.GGJ20
         [SerializeField] private GameObject _gameOverUI;
         [SerializeField] private Text _highScoreText;
         [SerializeField] private Text _currentFuel;
+        [SerializeField] private Text _currentScore;
         [SerializeField] private List<GameObject> _sceneBlocks;
 
         private GameStateType gameState;
@@ -21,6 +22,8 @@ namespace Mikabrytu.GGJ20
         private GameObject currentBlock;
         private float spawnPositionX = 20f;
         private int lastStation;
+
+#region Unity Methods
 
         private void Start()
         {
@@ -37,6 +40,10 @@ namespace Mikabrytu.GGJ20
         {
             _currentFuel.text = $"Fuel: {_rocketComponent.GetFuel()}%";
         }
+
+#endregion
+
+#region UI
 
         public void SetupInitialMenuUI()
         {
@@ -61,6 +68,10 @@ namespace Mikabrytu.GGJ20
             _gameOverUI.SetActive(true);
         }
 
+#endregion
+
+#region Game States
+
         public void StartInitialMenu()
         {
             SetupInitialMenuUI();
@@ -76,7 +87,17 @@ namespace Mikabrytu.GGJ20
         public void StartGameOver()
         {
             SetupGameOverUI();
+            CheckScore();
         }
+
+        public void RestartGame()
+        {
+            InitRocket();
+        }
+
+#endregion
+
+#region Level and Rocket
 
         public void GenerateLevel()
         {
@@ -96,21 +117,41 @@ namespace Mikabrytu.GGJ20
             _rocketComponent.ResetPosition();
         }
 
-        public void ResetRocket()
+        public void ResetRocket(Vector2 stationPosition)
         {
+            _rocketComponent.SetStationPosition(stationPosition);
             _rocketComponent.ResetFuel();
         }
 
+#endregion
+        
+#region Score
+
+        public void UpdateScore()
+        {
+            scoreManager.IncreaseScore();
+            _currentScore.text = $"Explored: {scoreManager.GetScore()}";
+        }
+
+        public void CheckScore()
+        {
+            scoreManager.SaveScore();
+        }
+
+#endregion
+
+#region Events
+    
         /// <summary>
         /// Start routine if rocket land on station
         /// </summary>
-        public void RocketLanded(OnLandOnStationEvent e)
+        private void RocketLanded(OnLandOnStationEvent e)
         {
             if (lastStation == e.stationModel.id)
                 return;
             
             UpdateScore();
-            ResetRocket();
+            ResetRocket(e.stationPosition);
             lastStation = e.stationModel.id;
 
             if (e.stationModel.isObjective)
@@ -120,19 +161,11 @@ namespace Mikabrytu.GGJ20
         /// <summary>
         /// Start routine if rocket crash on the ground
         /// </summary>
-        public void RocketLanded(OnRocketCrashEvent e)
+        private void RocketLanded(OnRocketCrashEvent e)
         {
             StartGameOver();
         }
-
-        public void UpdateScore()
-        {
-            scoreManager.IncreaseScore();
-        }
-
-        public void CheckScore()
-        {
-
-        }
     }
+
+#endregion
 }
