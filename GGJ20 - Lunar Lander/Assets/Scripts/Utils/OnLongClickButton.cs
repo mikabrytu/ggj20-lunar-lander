@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace Mikabrytu.GGJ20.Components
+namespace Mikabrytu.GGJ20
 {
-    public class InputButtonComponent : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+    public class OnLongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private UnityEvent _onLongClick;
 
