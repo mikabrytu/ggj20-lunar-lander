@@ -1,5 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UI;
+using Mikabrytu.GGJ20.Events;
 
 namespace Mikabrytu.GGJ20
 {
@@ -9,14 +11,21 @@ namespace Mikabrytu.GGJ20
         [SerializeField] private GameObject _gameUI;
         [SerializeField] private GameObject _gameOverUI;
         [SerializeField] private Text _highScoreText;
+        [SerializeField] private List<GameObject> _sceneBlocks;
 
         private GameStateType gameState;
         private ScoreManager scoreManager;
+        private GameObject currentBlock;
+        private float spawnPositionX = 20f;
+        private int lastStation;
 
         private void Start()
         {
             scoreManager = GetComponent<ScoreManager>();
             gameState = GameStateType.InitialMenu;
+
+            EventsManager.AddListener<OnLandOnStationEvent>(RocketLanded);
+            EventsManager.AddListener<OnRocketCrashEvent>(RocketLanded);
 
             StartInitialMenu();
         }
@@ -62,7 +71,15 @@ namespace Mikabrytu.GGJ20
 
         public void GenerateLevel()
         {
-            Debug.Log("Generating Level...");
+            GameObject block;
+            do
+            {
+                block = _sceneBlocks[Random.Range(0, _sceneBlocks.Count)];
+            } while (block == currentBlock);
+            
+            block.transform.position = Vector2.right * spawnPositionX;
+            spawnPositionX += 20;
+            currentBlock = block;
         }
 
         public void SetupRocket()
@@ -70,9 +87,27 @@ namespace Mikabrytu.GGJ20
 
         }
 
-        public void RocketLanded(bool isSafeSpot)
+        /// <summary>
+        /// Start routine if rocket land on station
+        /// </summary>
+        public void RocketLanded(OnLandOnStationEvent e)
         {
+            if (lastStation != e.stationModel.id)
+            {
+                UpdateScore();
+                lastStation = e.stationModel.id;
+            }
 
+            if (e.stationModel.isObjective)
+                GenerateLevel();
+        }
+        
+        /// <summary>
+        /// Start routine if rocket crash on the ground
+        /// </summary>
+        public void RocketLanded(OnRocketCrashEvent e)
+        {
+            StartGameOver();
         }
 
         public void UpdateScore()
