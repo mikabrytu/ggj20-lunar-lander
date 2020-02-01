@@ -116,6 +116,7 @@ namespace Mikabrytu.GGJ20
         public void InitRocket()
         {
             _rocketComponent.ResetPosition();
+            _rocketComponent.ResetFuel();
         }
 
         public void ResetRocket(Vector2 stationPosition)
