@@ -38,7 +38,8 @@ namespace Mikabrytu.GGJ20.Systems
                 return;
             }
 
-            body.AddRelativeForce(thrusterForce * direction, ForceMode2D.Force);
+            Vector2 force = new Vector2(thrusterForce.x * direction.x, thrusterForce.y);
+            body.AddRelativeForce(force, ForceMode2D.Force);
             thrusterParticle.Play();
             currentFuel -= impulseCost;
         }
