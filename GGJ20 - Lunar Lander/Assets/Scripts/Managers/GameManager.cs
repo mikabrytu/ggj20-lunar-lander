@@ -1,16 +1,19 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Mikabrytu.GGJ20.Components;
 using Mikabrytu.GGJ20.Events;
 
 namespace Mikabrytu.GGJ20
 {
     public class GameManager : Singleton<GameManager>
     {
+        [SerializeField] private IRocket _rocketComponent;
         [SerializeField] private GameObject _initialMenuUI;
         [SerializeField] private GameObject _gameUI;
         [SerializeField] private GameObject _gameOverUI;
         [SerializeField] private Text _highScoreText;
+        [SerializeField] private Text _currentFuel;
         [SerializeField] private List<GameObject> _sceneBlocks;
 
         private GameStateType gameState;
@@ -28,6 +31,11 @@ namespace Mikabrytu.GGJ20
             EventsManager.AddListener<OnRocketCrashEvent>(RocketLanded);
 
             StartInitialMenu();
+        }
+
+        private void Update()
+        {
+            _currentFuel.text = $"Fuel: {_rocketComponent.GetFuel()}%";
         }
 
         public void SetupInitialMenuUI()
@@ -62,6 +70,7 @@ namespace Mikabrytu.GGJ20
         {
             SetupGameUI();
             GenerateLevel();
+            InitRocket();
         }
 
         public void StartGameOver()
@@ -82,9 +91,14 @@ namespace Mikabrytu.GGJ20
             currentBlock = block;
         }
 
-        public void SetupRocket()
+        public void InitRocket()
         {
+            _rocketComponent.ResetPosition();
+        }
 
+        public void ResetRocket()
+        {
+            _rocketComponent.ResetFuel();
         }
 
         /// <summary>
@@ -92,11 +106,12 @@ namespace Mikabrytu.GGJ20
         /// </summary>
         public void RocketLanded(OnLandOnStationEvent e)
         {
-            if (lastStation != e.stationModel.id)
-            {
-                UpdateScore();
-                lastStation = e.stationModel.id;
-            }
+            if (lastStation == e.stationModel.id)
+                return;
+            
+            UpdateScore();
+            ResetRocket();
+            lastStation = e.stationModel.id;
 
             if (e.stationModel.isObjective)
                 GenerateLevel();

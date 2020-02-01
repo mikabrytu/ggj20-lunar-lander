@@ -4,11 +4,14 @@ using Mikabrytu.GGJ20.Events;
 
 namespace Mikabrytu.GGJ20.Components
 {
-    public class RocketComponent : MonoBehaviour
+    public class RocketComponent : MonoBehaviour, IRocket
     {
+        [SerializeField] private ParticleSystem _thrusterParticle;
         [SerializeField] private Vector2 _initialImpulse;
         [SerializeField] private Vector2 _thrusterForce;
         [SerializeField] private LayerMask _stationMask;
+        [SerializeField] private float _maxFuel;
+        [SerializeField] private float _impulseCost;
         [SerializeField] private int _groundLayer;
 
         private IFly flySystem;
@@ -26,12 +29,8 @@ namespace Mikabrytu.GGJ20.Components
             flySystem = new FlySystem();
             groundCheckSystem = new GroundCheckSystem();
 
-            flySystem.Setup(_initialImpulse, _thrusterForce);
-        }
-
-        private void Update()
-        {
-            
+            flySystem.SetupForces(_initialImpulse, _thrusterForce);
+            flySystem.SetupFuel(_maxFuel, _impulseCost);
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
@@ -40,14 +39,29 @@ namespace Mikabrytu.GGJ20.Components
                 EventsManager.Raise(new OnRocketCrashEvent());
         }
 
+        public void ResetPosition()
+        {
+            
+        }
+
+        public void ResetFuel()
+        {
+            flySystem.ResetFuel();
+        }
+
+        public string GetFuel()
+        {
+            return flySystem.GetFuel().ToString();
+        }
+
         public void OnLeftClick()
         {
-            flySystem.Impulse(body, Vector2.left, isLanded());
+            flySystem.Impulse(body, Vector2.left, _thrusterParticle, isLanded());
         }
 
         public void OnRightClick()
         {
-            flySystem.Impulse(body, Vector2.right, isLanded());
+            flySystem.Impulse(body, Vector2.right, _thrusterParticle, isLanded());
         }
 
         private bool isLanded()
