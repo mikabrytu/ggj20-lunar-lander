@@ -9,6 +9,8 @@ namespace Mikabrytu.GGJ20.Components
     {
         [SerializeField] private List<Transform> _targets;
         [SerializeField] private Vector3 _offset;
+        [SerializeField] private float _minZoom = 3f;
+        [SerializeField] private float _maxZoom = 5f;
 
         private IMoveCamera moveCameraSystem;
         private IZoomCamera zoomCameraSystem;
@@ -23,12 +25,13 @@ namespace Mikabrytu.GGJ20.Components
             zoomCameraSystem = new ZoomCameraSystem();
 
             moveCameraSystem.Setup(_offset);
+            zoomCameraSystem.Setup(GetComponent<Camera>(), _minZoom, _maxZoom);
         }
 
         private void LateUpdate()
         {
             moveCameraSystem.Move(cameraTransform, _targets);
-            zoomCameraSystem.Zoom();
+            zoomCameraSystem.Zoom(_targets);
         }
 
         public void UpdateTargets(Transform newTarget)

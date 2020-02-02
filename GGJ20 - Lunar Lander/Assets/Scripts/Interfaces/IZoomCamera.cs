@@ -6,6 +6,7 @@ namespace Mikabrytu.GGJ20.Systems
 {
     public interface IZoomCamera
     {
-        void Zoom();
+        void Setup(Camera camera, float minZoom, float maxZoom);
+        void Zoom(List<Transform> targets);
     }
 }
