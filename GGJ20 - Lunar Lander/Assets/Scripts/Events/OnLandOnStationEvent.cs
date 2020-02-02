@@ -6,13 +6,13 @@ namespace Mikabrytu.GGJ20.Events
 {
     public class OnLandOnStationEvent : BaseEvent
     {
-        public StationModel stationModel;
-        public Vector2 stationPosition;
+        public StationModel model;
+        public Transform transform;
 
-        public OnLandOnStationEvent(StationModel stationModel, Vector2 stationPosition)
+        public OnLandOnStationEvent(StationModel model, Transform transform)
         {
-            this.stationModel = stationModel;
-            this.stationPosition = stationPosition;
+            this.model = model;
+            this.transform = transform;
         }
     }
 }

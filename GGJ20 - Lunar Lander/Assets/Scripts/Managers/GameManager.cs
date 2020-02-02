@@ -9,6 +9,8 @@ namespace Mikabrytu.GGJ20
     public class GameManager : Singleton<GameManager>
     {
         [SerializeField] private IRocket _rocketComponent;
+        [SerializeField] private ICamera _cameraComponent;
+
         [SerializeField] private GameObject _initialMenuUI;
         [SerializeField] private GameObject _gameUI;
         [SerializeField] private GameObject _gameOverUI;
@@ -98,7 +100,7 @@ namespace Mikabrytu.GGJ20
 
 #endregion
 
-#region Level and Rocket
+#region Level and Components
 
         public void GenerateLevel()
         {
@@ -107,6 +109,12 @@ namespace Mikabrytu.GGJ20
             {
                 block = _sceneBlocks[Random.Range(0, _sceneBlocks.Count)];
             } while (block == currentBlock);
+
+            var stations = block.GetComponentsInChildren<IStation>();
+            foreach (IStation item in stations)
+            {
+                item.ActivateEnergyCell(true);
+            }
             
             block.transform.position = Vector2.right * spawnPositionX;
             spawnPositionX += 20;
@@ -123,6 +131,11 @@ namespace Mikabrytu.GGJ20
         {
             _rocketComponent.SetStationPosition(stationPosition);
             _rocketComponent.ResetFuel();
+        }
+
+        public void UpdateCameraTargets(Transform nextStation)
+        {
+            _cameraComponent.UpdateTargets(nextStation);
         }
 
 #endregion
@@ -149,15 +162,17 @@ namespace Mikabrytu.GGJ20
         /// </summary>
         private void RocketLanded(OnLandOnStationEvent e)
         {
-            if (lastStation == e.stationModel.id)
+            if (lastStation == e.model.id)
                 return;
+
+            if (e.model.isObjective)
+                GenerateLevel();
             
             UpdateScore();
-            ResetRocket(e.stationPosition);
-            lastStation = e.stationModel.id;
+            UpdateCameraTargets(_rocketComponent.GetNextVisibleStation());
+            ResetRocket(e.transform.position);
 
-            if (e.stationModel.isObjective)
-                GenerateLevel();
+            lastStation = e.model.id;
         }
         
         /// <summary>

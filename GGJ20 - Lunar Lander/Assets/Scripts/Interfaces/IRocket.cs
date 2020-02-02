@@ -10,5 +10,6 @@ namespace Mikabrytu.GGJ20.Components
         void ResetPosition();
         void ResetFuel();
         string GetFuel();
+        Transform GetNextVisibleStation();
     }
 }

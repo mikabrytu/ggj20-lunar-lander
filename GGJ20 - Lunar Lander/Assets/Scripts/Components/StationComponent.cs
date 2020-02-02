@@ -3,8 +3,9 @@ using Mikabrytu.GGJ20.Events;
 
 namespace Mikabrytu.GGJ20.Components
 {
-    public class StationComponent : MonoBehaviour
+    public class StationComponent : MonoBehaviour, IStation
     {
+        [SerializeField] private GameObject _energyCellObject;
         [SerializeField] private StationModel _model;
         [SerializeField] private int _layerCheck;
 
@@ -14,7 +15,12 @@ namespace Mikabrytu.GGJ20.Components
                 return;
                 
             if (collision.gameObject.layer == _layerCheck)
-                EventsManager.Raise(new OnLandOnStationEvent(_model, transform.position));
+                EventsManager.Raise(new OnLandOnStationEvent(_model, transform));
+        }
+
+        public void ActivateEnergyCell(bool activate)
+        {
+            _energyCellObject.SetActive(activate);
         }
     }
 }
