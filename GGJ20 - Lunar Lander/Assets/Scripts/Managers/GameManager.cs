@@ -54,6 +54,7 @@ namespace Mikabrytu.GGJ20
             _gameOverUI.SetActive(false);
 
             _highScoreText.text = $"High Score: {scoreManager.GetHighScore()}";
+            _currentScore.text = scoreManager.GetScore().ToString();
         }
 
         public void SetupGameUI()
@@ -145,7 +146,7 @@ namespace Mikabrytu.GGJ20
         public void UpdateScore()
         {
             scoreManager.IncreaseScore();
-            _currentScore.text = $"Explored: {scoreManager.GetScore()}";
+            _currentScore.text = scoreManager.GetScore().ToString();
         }
 
         public void CheckScore()
