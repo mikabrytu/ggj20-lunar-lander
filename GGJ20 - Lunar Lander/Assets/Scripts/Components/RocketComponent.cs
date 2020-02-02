@@ -76,12 +76,27 @@ namespace Mikabrytu.GGJ20.Components
 
         public void OnLeftClick()
         {
-            flySystem.Impulse(body, Vector2.left, _thrusterParticle, isLanded());
+            ActivateThrusters(true);
+            flySystem.Impulse(body, Vector2.left, isLanded());
         }
 
         public void OnRightClick()
         {
-            flySystem.Impulse(body, Vector2.right, _thrusterParticle, isLanded());
+            ActivateThrusters(true);
+            flySystem.Impulse(body, Vector2.right, isLanded());
+        }
+
+        public void ActivateThrusters(bool active)
+        {
+            if (active)
+            {
+                if (!_thrusterParticle.isPlaying)
+                    _thrusterParticle.Play();
+            }
+            else
+            {
+                _thrusterParticle.Stop();
+            }
         }
 
         private bool isLanded()

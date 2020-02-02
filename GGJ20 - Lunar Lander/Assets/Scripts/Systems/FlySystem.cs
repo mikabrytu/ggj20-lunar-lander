@@ -26,7 +26,7 @@ namespace Mikabrytu.GGJ20.Systems
             ResetFuel();
         }
 
-        public void Impulse(Rigidbody2D body, Vector2 direction, ParticleSystem thrusterParticle, bool isLanded)
+        public void Impulse(Rigidbody2D body, Vector2 direction, bool isLanded)
         {
             if (currentFuel <= 0)
                 return;
@@ -40,7 +40,6 @@ namespace Mikabrytu.GGJ20.Systems
 
             Vector2 force = new Vector2(thrusterForce.x * direction.x, thrusterForce.y);
             body.AddRelativeForce(force, ForceMode2D.Force);
-            thrusterParticle.Play();
             currentFuel -= impulseCost;
         }
 

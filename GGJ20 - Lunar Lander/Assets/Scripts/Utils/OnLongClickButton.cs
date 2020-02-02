@@ -9,6 +9,7 @@ namespace Mikabrytu.GGJ20
     public class OnLongClickButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private UnityEvent _onLongClick;
+        [SerializeField] private UnityEvent _onRelease;
 
         private bool isPressing = false;
 
@@ -31,6 +32,7 @@ namespace Mikabrytu.GGJ20
         public void OnPointerUp(PointerEventData eventData)
         {
             isPressing = false;
+            _onRelease?.Invoke();
         }
     }
 }
