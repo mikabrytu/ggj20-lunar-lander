@@ -9,7 +9,7 @@ namespace Mikabrytu.GGJ20.Components
         void SetStationPosition(Vector2 position);
         void ResetPosition();
         void ResetFuel();
-        string GetFuel();
+        float GetFuel();
         Transform GetNextVisibleStation();
     }
 }

@@ -14,8 +14,8 @@ namespace Mikabrytu.GGJ20
         [SerializeField] private GameObject _initialMenuUI;
         [SerializeField] private GameObject _gameUI;
         [SerializeField] private GameObject _gameOverUI;
+        [SerializeField] private Slider _currentFuel;
         [SerializeField] private Text _highScoreText;
-        [SerializeField] private Text _currentFuel;
         [SerializeField] private Text _currentScore;
         [SerializeField] private List<GameObject> _sceneBlocks;
 
@@ -40,7 +40,7 @@ namespace Mikabrytu.GGJ20
 
         private void Update()
         {
-            _currentFuel.text = $"Fuel: {_rocketComponent.GetFuel()}%";
+            _currentFuel.value = _rocketComponent.GetFuel();
         }
 
 #endregion

@@ -64,9 +64,9 @@ namespace Mikabrytu.GGJ20.Components
             flySystem.ResetFuel();
         }
 
-        public string GetFuel()
+        public float GetFuel()
         {
-            return flySystem.GetFuel().ToString();
+            return flySystem.GetFuel() / 100;
         }
 
         public Transform GetNextVisibleStation()
