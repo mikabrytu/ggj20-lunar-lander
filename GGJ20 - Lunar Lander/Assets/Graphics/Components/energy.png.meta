@@ -1,67 +1,67 @@
 fileFormatVersion: 2
-guid: df90c074254624bda8b8db748039ed1b
+guid: 1b338f5542a234b84b91814da3cf99f8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5564248608999137188
-    second: energy_0
+      213: -5697681467281203540
+    second: energy (2)_0
   - first:
-      213: 3119334169586225959
-    second: energy_1
+      213: -8301880689878234452
+    second: energy (2)_1
   - first:
-      213: 4692399049022686247
-    second: energy_2
+      213: 7480361070946207513
+    second: energy (2)_2
   - first:
-      213: 5693366915664821068
-    second: energy_3
+      213: 5927495369886914337
+    second: energy (2)_3
   - first:
-      213: 7102075283677565631
-    second: energy_4
+      213: 5883479460912977669
+    second: energy (2)_4
   - first:
-      213: -6655945943761072377
-    second: energy_5
+      213: 1511919997653570425
+    second: energy (2)_5
   - first:
-      213: 8148473475668785900
-    second: energy_6
+      213: -1256447039123945832
+    second: energy (2)_6
   - first:
-      213: -168496815025007581
-    second: energy_7
+      213: -8010974540567270182
+    second: energy (2)_7
   - first:
-      213: -2196593872202064198
-    second: energy_8
+      213: -3471847295232895854
+    second: energy (2)_8
   - first:
-      213: -6693503001018538942
-    second: energy_9
+      213: 2862494341036501858
+    second: energy (2)_9
   - first:
-      213: 8134577077258493570
-    second: energy_10
+      213: -5996728199283004080
+    second: energy (2)_10
   - first:
-      213: 7524430443632939685
-    second: energy_11
+      213: 4535146370605867133
+    second: energy (2)_11
   - first:
-      213: -5348952669223515252
-    second: energy_12
+      213: -4937155649015109612
+    second: energy (2)_12
   - first:
-      213: -7586965618575522404
-    second: energy_13
+      213: -8579215652009763877
+    second: energy (2)_13
   - first:
-      213: -2677052749466587945
-    second: energy_14
+      213: 983683415530115635
+    second: energy (2)_14
   - first:
-      213: -7625076977245731784
-    second: energy_15
+      213: -8447555359517771612
+    second: energy (2)_15
   - first:
-      213: -1604546901661819066
-    second: energy_16
+      213: 4353430548352141366
+    second: energy (2)_16
   - first:
-      213: -7964561791718574538
-    second: energy_17
+      213: -4607257427578961556
+    second: energy (2)_17
   - first:
-      213: 6984274371058105925
-    second: energy_18
+      213: -7751248540544727540
+    second: energy (2)_18
   - first:
-      213: -3486720137735962425
-    second: energy_19
+      213: 5692167992883407125
+    second: energy (2)_19
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -102,7 +102,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 20
@@ -146,7 +146,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: energy_0
+      name: energy (2)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a07d1bbc155f74bea927157535f2bd61
-      internalID: -5564248608999137188
+      spriteID: d6c06241fb2994171a796444c53df346
+      internalID: -5697681467281203540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_1
+      name: energy (2)_1
       rect:
         serializedVersion: 2
         x: 22
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1f4831089e07245089f406e9ca9a0d57
-      internalID: 3119334169586225959
+      spriteID: f95dc9a949ec34d34be17095af7393fc
+      internalID: -8301880689878234452
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_2
+      name: energy (2)_2
       rect:
         serializedVersion: 2
         x: 44
@@ -202,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64ec484063d6f4bb5bdc3fcf412bbfda
-      internalID: 4692399049022686247
+      spriteID: 10f845d2812b7432ab896e44fb780747
+      internalID: 7480361070946207513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_3
+      name: energy (2)_3
       rect:
         serializedVersion: 2
         x: 66
@@ -223,14 +223,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68e7aff5ec5a4406288a904d7a5b8159
-      internalID: 5693366915664821068
+      spriteID: fae518582d4b54842bb542d3416b279b
+      internalID: 5927495369886914337
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_4
+      name: energy (2)_4
       rect:
         serializedVersion: 2
         x: 88
@@ -244,14 +244,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30fed5ae176ba4e3489d98d7bea14683
-      internalID: 7102075283677565631
+      spriteID: 343e0ce1730234342bd7c50fbe88dd56
+      internalID: 5883479460912977669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_5
+      name: energy (2)_5
       rect:
         serializedVersion: 2
         x: 110
@@ -265,14 +265,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4a9ff2982c9fc4491bb1e259605c83f4
-      internalID: -6655945943761072377
+      spriteID: d0af18b0ef7ea4001872bc0810831c8b
+      internalID: 1511919997653570425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_6
+      name: energy (2)_6
       rect:
         serializedVersion: 2
         x: 132
@@ -286,14 +286,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbe571f044e65475dbeb8d3e63819d9a
-      internalID: 8148473475668785900
+      spriteID: e2f944acd506942f7aeea21476476f15
+      internalID: -1256447039123945832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_7
+      name: energy (2)_7
       rect:
         serializedVersion: 2
         x: 154
@@ -307,14 +307,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00ba32a39b0514189be9e9583a697c8b
-      internalID: -168496815025007581
+      spriteID: 1c8e77287177441c6b9b0d5c37029daa
+      internalID: -8010974540567270182
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_8
+      name: energy (2)_8
       rect:
         serializedVersion: 2
         x: 176
@@ -328,14 +328,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba7f27349a51447f4b8d740b8bcf3f5a
-      internalID: -2196593872202064198
+      spriteID: 523d420f88be644b2a601f9a781829e6
+      internalID: -3471847295232895854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_9
+      name: energy (2)_9
       rect:
         serializedVersion: 2
         x: 198
@@ -349,14 +349,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f650e8e7ff62b477a9f6b1e550266251
-      internalID: -6693503001018538942
+      spriteID: d72cacae2405c4b22b5b89c1e54c2e44
+      internalID: 2862494341036501858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_10
+      name: energy (2)_10
       rect:
         serializedVersion: 2
         x: 220
@@ -370,14 +370,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 15616dfea721741b78227b621a00ba2e
-      internalID: 8134577077258493570
+      spriteID: 680696d59470d42ceaaa6e307acb599f
+      internalID: -5996728199283004080
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_11
+      name: energy (2)_11
       rect:
         serializedVersion: 2
         x: 242
@@ -391,14 +391,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c18e2c6b48d44db3b962fc8146872e6
-      internalID: 7524430443632939685
+      spriteID: 796cbe82438c94b8f810bdda18f0796f
+      internalID: 4535146370605867133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_12
+      name: energy (2)_12
       rect:
         serializedVersion: 2
         x: 264
@@ -412,14 +412,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f565177d4374487283188b77805bcdc
-      internalID: -5348952669223515252
+      spriteID: 66a87ef8ef07c4d839cbc9dc40a152d9
+      internalID: -4937155649015109612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_13
+      name: energy (2)_13
       rect:
         serializedVersion: 2
         x: 286
@@ -433,14 +433,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2efec023a96c42b78501af376fdf824
-      internalID: -7586965618575522404
+      spriteID: 61a1a2dabd33e41cbb9079bc235d133a
+      internalID: -8579215652009763877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_14
+      name: energy (2)_14
       rect:
         serializedVersion: 2
         x: 308
@@ -454,14 +454,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 329e7c753570944c69516a5ae8210489
-      internalID: -2677052749466587945
+      spriteID: 6c89cefbc72d84b7290ed5ee67ae6cf3
+      internalID: 983683415530115635
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_15
+      name: energy (2)_15
       rect:
         serializedVersion: 2
         x: 330
@@ -475,14 +475,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01281c37236374b10a2587ebc5ebb17e
-      internalID: -7625076977245731784
+      spriteID: bb9688ce0558241e5a1c276349a6012a
+      internalID: -8447555359517771612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_16
+      name: energy (2)_16
       rect:
         serializedVersion: 2
         x: 352
@@ -496,14 +496,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 93e13f7a81c2f47f88aed0195551f926
-      internalID: -1604546901661819066
+      spriteID: 4401a5715b7eb4584a7f026d95567fc3
+      internalID: 4353430548352141366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_17
+      name: energy (2)_17
       rect:
         serializedVersion: 2
         x: 374
@@ -517,14 +517,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbb5b7c3aa45046d59522194e4df2d0a
-      internalID: -7964561791718574538
+      spriteID: 29714d656458e47be830da314ac96da4
+      internalID: -4607257427578961556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_18
+      name: energy (2)_18
       rect:
         serializedVersion: 2
         x: 396
@@ -538,14 +538,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94122caab9aa94ca8a5e5f29e5ae11db
-      internalID: 6984274371058105925
+      spriteID: e7171ec7e1fd643a496293c4a954abb5
+      internalID: -7751248540544727540
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: energy_19
+      name: energy (2)_19
       rect:
         serializedVersion: 2
         x: 418
@@ -559,8 +559,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: df7a775ee2d5a4dfda2bb3ad5194ae47
-      internalID: -3486720137735962425
+      spriteID: a57f0c71c6c3547f5b4fde22abb2ca2d
+      internalID: 5692167992883407125
       vertices: []
       indices: 
       edges: []
