@@ -85,6 +85,7 @@ namespace Mikabrytu.GGJ20
             SetupGameUI();
             GenerateLevel();
             InitRocket();
+            UpdateCameraTargets(_rocketComponent.GetNextVisibleStation());
         }
 
         public void StartGameOver()
